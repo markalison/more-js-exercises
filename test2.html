@@ -6,20 +6,44 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Press enter to confirm numbers</p>
     <input type="text"  id="input1" placeholder="Please input a number">
-    <input type="text" id="input2" palceholder="Please input a number">
-    <p id="output"></p>
+    <input type="text" id="input2" placeholder="Please input a number">
+    <button type="button" id="mybutton">Multiply Numbers</button>
+    
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
 
     <script>
-        input1 = document.getElementById("input1")
+        const mybutton = document.getElementById("mybutton")
+        mybutton.addEventListener('click', (event) => {
+            multiply(x, y);
+            output3.textContent = `Product: ${product}`;
+        })
+        const input1 = document.getElementById("input1")
         input1.addEventListener('keydown', (event) =>{
-            if (event.key = "Enter") {
-                output.textContent = input1.value
+            if (event.key == "Enter") {
+                x = input1.value;
+                output1.textContent = `First number: ${x}`
             }
         })
-        const output = document.getElementById("output");
-        
 
+        const input2 = document.getElementById("input2")
+        input2.addEventListener('keydown', (event) => {
+            if (event.key == "Enter") {
+                
+                y = input2.value
+                output2.textContent = `Second number: ${y}`
+            }
+        })
+        const output1 = document.getElementById("output1");
+        const output2 = document.getElementById("output2");
+        
+        function multiply(x, y) {
+            product = parseInt(x) * parseInt(y);
+            return product;
+        }
 
     </script>
 </body>
