@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"  id="input1" placeholder="Please input a number">
+    <input type="text" id="input2" palceholder="Please input a number">
+    <p id="output"></p>
+
+    <script>
+        input1 = document.getElementById("input1")
+        input1.addEventListener('keydown', (event) =>{
+            if (event.key = "Enter") {
+                output.textContent = input1.value
+            }
+        })
+        const output = document.getElementById("output");
+        
+
+
+    </script>
+</body>
+</html>
