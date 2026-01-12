@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Press Enter to confirm number, check console for Fizz Buzz</p>
+    <input type ="text" id="num" placeholder="Please enter a number">
+    <p id="output"></p>
+
+    <script>
+
+        const num = document.getElementById("num")
+        const output = document.getElementById("output")
+        let answer = undefined
+        num.addEventListener('keydown', (event) => {
+           if (event.key == "Enter") {
+            answer = num.value
+            output.textContent = answer
+            fizzBuzz(answer)
+           }
+        });
+
+        function fizzBuzz(num) {
+            for (let i=1; i <= num; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    console.log("FizzBuzz");
+                } else if (i % 3 ==0) {
+                    console.log("Fizz")
+                } else if (i % 5 == 0) {
+                    console.log("Buzz")
+                } else {
+                    console.log(i)
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
